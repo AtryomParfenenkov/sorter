@@ -5,36 +5,36 @@ class Sorter {
   } 
   constructor() {
    this.compareFunction = (a,b) => a-b ; 
-   this.countElement = [];
+   this.countArray = [];
   }
 
   add(element) {
-    this.countElement.push(element);
+    this.countArray.push(element);
   }
 
   at(index) {
-    return this.countElement[index];
+    return this.countArray[index];
   }
 
   get length() {
-    return this.countElement.length;
+    return this.countArray.length;
   }
 
   toArray() {
-   return this.countElement;
+   return this.countArray;
   }
 
   sort(indices = []) { 
     let tempArray = []; 
     for (let i = 0; i < indices.length; i++) 
     { 
-    tempArray[i] = this.countElement[indices[i]]; 
+    tempArray[i] = this.countArray[indices[i]]; 
     } 
     tempArray.sort(this.compareFunction); 
     indices.sort(this.comparatorNumeric); 
     
     for(let i = 0; i < indices.length; i++) { 
-    this.countElement[indices[i]] = tempArray[i]; 
+    this.countArray[indices[i]] = tempArray[i]; 
     } 
     }
   setComparator(compareFunction) {
